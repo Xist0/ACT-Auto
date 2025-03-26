@@ -1,7 +1,7 @@
 import { Card } from "antd";
 import { Link } from "react-router-dom";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   CarOutlined,
   DashboardOutlined,
@@ -11,9 +11,16 @@ import {
 } from "@ant-design/icons";
 import "../styles/carCard.scss";
 
-const CarCard = ({ car }) => {
+const CarCard = ({ car, setMaxHeight }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [fade, setFade] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    if (cardRef.current) {
+      setMaxHeight(prev => Math.max(prev, cardRef.current.clientHeight));
+    }
+  }, []);
 
   const handleNext = (e) => {
     e.preventDefault();
@@ -33,9 +40,13 @@ const CarCard = ({ car }) => {
     }, 200);
   };
 
+  const truncateTitle = (title) => {
+    return title.split(" ").slice(0, 3).join(" ") + (title.split(" ").length > 3 ? "..." : "");
+  };
+
   return (
     <Link to={`/car/${car.id}`} className="car-card">
-      <Card hoverable className="car-card-content">
+      <Card hoverable className="car-card-content" ref={cardRef}>
         <div className="image-container">
           <img
             src={car.picture[currentImage]}
@@ -50,7 +61,7 @@ const CarCard = ({ car }) => {
           )}
         </div>
         <div className="car-info">
-          <h3 className="car-title">{car.name}</h3>
+          <h3 className="car-title">{truncateTitle(car.name)}</h3>
           <p className="price">{car.price.toLocaleString()} ₽</p>
           <div className="car-icons">
             <span><SettingOutlined /> {car.param.find(p => p.name === "КПП")?._}</span>
