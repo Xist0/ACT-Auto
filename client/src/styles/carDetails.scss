@@ -29,17 +29,23 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  max-height: 600px;
+  gap: 30px;
 }
 
 .gallery {
   flex-basis: 50%;
   margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px; /* Задаем минимальную высоту */
 }
 
 .main-image-wrapper {
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
+  height: 550px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -78,6 +84,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 500px; /* Задаем минимальную высоту для блока с информацией */
 }
 
 .info h2 {
@@ -155,15 +162,6 @@
   font-size: 16px;
   color: #555;
   margin-bottom: 10px;
-}
-
-.car-content {
-  gap: 30px;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
 }
 
 .contact-button {
