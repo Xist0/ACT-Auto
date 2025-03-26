@@ -11,14 +11,15 @@ import {
 } from "@ant-design/icons";
 import "../styles/carCard.scss";
 
-const CarCard = ({ car, setMaxHeight }) => {
+const CarCard = ({ car }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [fade, setFade] = useState(false);
   const cardRef = useRef(null);
 
   useEffect(() => {
     if (cardRef.current) {
-      setMaxHeight(prev => Math.max(prev, cardRef.current.clientHeight));
+      // Убираем setMaxHeight, если не передается и не используется
+      // Вместо этого можно использовать CSS для управления высотой
     }
   }, []);
 
