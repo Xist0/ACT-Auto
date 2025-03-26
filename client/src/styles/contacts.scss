@@ -1,3 +1,5 @@
+// contacts.scss
+
 .contacts {
   display: flex;
   justify-content: center;
@@ -6,8 +8,8 @@
   .feedback-card {
     max-width: 400px;
     padding: 20px;
-    background: #ffffff;
+    background: var(--card-bg-light);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow-light);
   }
 }

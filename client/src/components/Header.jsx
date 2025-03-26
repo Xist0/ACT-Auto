@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Menu mode="horizontal" theme={theme}>
+      <Menu mode="horizontal">
         <Menu.Item key="1">
           <Link to="/">Главное</Link>
         </Menu.Item>

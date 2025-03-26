@@ -1,18 +1,11 @@
 .header {
-    background: #001529;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  
-    .menu {
-      background: transparent;
-      color: white;
-    }
-  
-    .theme-switch {
-      margin-left: 15px;
-    }
+  background: #001529;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+
+  p {
+    margin: 5px 0;
   }
-  
+}
