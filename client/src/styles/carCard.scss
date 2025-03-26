@@ -1,0 +1,108 @@
+.car-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+  
+    .car-card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%; // Фиксированная высота карточек
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+    }
+  
+    .image-container {
+      position: relative;
+      height: 220px; // Фиксированная высота блока изображения
+  
+      .car-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        transition: opacity 0.5s ease-in-out;
+      }
+  
+      .prev-btn, .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 50%;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+  
+        &:hover {
+          background: rgba(0, 0, 0, 0.8);
+        }
+      }
+  
+      .prev-btn { left: 10px; }
+      .next-btn { right: 10px; }
+    }
+  
+    .car-info {
+      padding: 15px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1; // Контент растягивается внутри карточки
+      justify-content: space-between;
+  
+      .car-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+  
+      .price {
+        font-size: 18px;
+        font-weight: 700;
+        color: #ff4d4f;
+        margin-bottom: 10px;
+      }
+  
+      .car-icons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        font-size: 14px;
+        color: #555;
+        max-height: 80px;
+        overflow: hidden;
+  
+        span {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          justify-content: center;
+          background: #f5f5f5;
+          padding: 6px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  
